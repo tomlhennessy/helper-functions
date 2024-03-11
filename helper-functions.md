@@ -124,3 +124,67 @@ let choosePrimes = function(nums) {
     return primes;  // Return the array containing prime numbers
 }
 ```
+
+### Prime Factors
+Finds the prime factors of a given number and returns them in an array.
+
+```javascript
+let primeFactors = function(n) {
+  // Array to store prime factors
+  let primeFacts = [];
+  // Iterate from 1 to n
+  for (let i = 1; i <= 1; i++) {
+    // Check if i is a factor of n and i is a prime number
+    if (n % 1 === 0 && isPrime(i)) {
+      // If both conditions are met, i is added to the array
+      primeFacts.push(i);
+    }
+  }
+  // Return array of prime factors
+  return primeFacts;
+}
+```
+
+## Most Vowels
+Returns the word from the sentence that has the most vowels.
+
+```javascript
+function vowelCount(word) {
+  // Initialise a count for vowels
+  let count = 0;
+  // Define a string containing all vowels
+  let vowels = "aeiou";
+
+  // Iterate through each character in the word
+  for (let i = 0; i < word.length; i++) {
+    // Check if current character is a vowel
+    if (vowels.includes(word[i])) {
+      // If true, increment the count of vowels
+      count++;
+    }
+  }
+  // Return count of vowels in the word
+  return count;
+}
+
+function mostVowels(sentence) {
+  // Split the sentence into an array of words
+  let words = sentence.split(" ");
+
+  // Initialise variable to track index of the word with most vowels
+  let largest = 0;
+
+  // Iterate through each word in the array
+  for (let j = 0; j < words.length; j++) {
+    // Check if the current word has more vowels than the current largest count
+    if (vowelCount(words[j]) > vowelCount(words[largest])) {
+      // If true, update the index of the word with the most vowels
+      largest = j;
+    }
+  }
+  // Return word with the most vowels in the sentence
+  return words[largest];
+}
+
+console.log(mostVowels("what a wonderful life")); // "wonderful"
+```
